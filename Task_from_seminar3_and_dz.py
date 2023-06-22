@@ -50,3 +50,33 @@ for word in words:
 
 
 pprint.pprint(my_dict)
+
+
+# Создайте словарь со списком вещей для похода в качестве ключа и их массой в качестве значения.
+# Определите какие вещи влезут в рюкзак передав его максимальную грузоподъёмность.
+# Достаточно вернуть один допустимый вариант. *Верните все возможные варианты комплектации рюкзака.
+#
+scrab = {'Мангал': 1200, 'Спальник': 1000, 'КЛМН': 300,
+          'Чайник': 500, 'Водка': 10000, 'Фляга': 350, 'Подзорная труба': 1000, 'Зажигалка': 10,
+          'Арбалет': 2000, 'Стрелы': 1000, 'Палатка': 4100, 'Носки': 100, 'Лодка': 10500}
+
+weight_max = 11000
+temp_keys = []
+temp_values = []
+result = []
+tools_keys = list(scrab.keys())
+tools_values = list(scrab.values())
+
+print(tools_keys)
+print(tools_values)
+
+for i in range(len(tools_keys)):
+    if tools_values[i] <= weight_max:
+        temp_keys = []
+        temp_values = []
+        for j in range(i, len(tools_keys)):
+            if sum(temp_values) + tools_values[j] <= weight_max:
+                temp_values.append(tools_values[j])
+                temp_keys.append(tools_keys[j])
+                print(temp_keys)
+
