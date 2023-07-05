@@ -18,7 +18,7 @@
 
 import os
 
-# ---- получаем сведения о папке (2й параметр - список файлов)
+
 def create_file_name(path, new_name, max_digit, old_extention, new_extention, part_of_old_file_name):
 
 
@@ -57,7 +57,7 @@ def create_file_name(path, new_name, max_digit, old_extention, new_extention, pa
         new_name_files_list.append(
             i[1].split('.')[0] + '_' + str(new_digit_part[:-len(str(i[0]))]) + str(i[0]) + '.' + i[1].split('.')[1])
 
-    # print(new_name_files_list)
+    print(new_name_files_list)
     return find_files, new_name_files_list
 
 path_file = 'c:\\GB\\Python_Data_Base_Home_Work\\.gitignore'
